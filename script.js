@@ -16,12 +16,21 @@ function getComputerChoice() {
 
 function playRound(player, computer) {
 	if (player === computer) {
+		return `Tie! you both chose ${player}`;
+	} else if (player === "Rock" && computer === "Scissors") {
+		return "You Win! Rock beats Scissors";
+	} else if (player === "Paper" && computer === "Rock") {
+		return "You Win! Rock beats Scissors";
+	} else if (player === "Scissors" && computer === "Paper") {
+		return "You Win! Rock beats Scissors";
+	} else {
+		return `You lose! ${computerSelection} beats ${playerSelection}`;
 	}
 }
 
 let playerInput = "roCk";
 let playerSelection = getCapitalize(playerInput);
-console.log(playerSelection);
 let computerSelection = getComputerChoice();
 
 let result = playRound(playerSelection, computerSelection);
+console.log(result);
