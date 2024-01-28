@@ -20,15 +20,15 @@ function playRound(player, computer) {
 	} else if (player === "Rock" && computer === "Scissors") {
 		return "You Win! Rock beats Scissors";
 	} else if (player === "Paper" && computer === "Rock") {
-		return "You Win! Rock beats Scissors";
+		return "You Win! Paper beats Rock";
 	} else if (player === "Scissors" && computer === "Paper") {
-		return "You Win! Rock beats Scissors";
+		return "You Win! Scissors beats Paper";
 	} else {
 		return `You lose! ${computerSelection} beats ${playerSelection}`;
 	}
 }
 
-let playerInput = "roCk";
+let playerInput = prompt("Rock, Paper or Scissors?");
 let playerSelection = getCapitalize(playerInput);
 let computerSelection = getComputerChoice();
 
