@@ -3,7 +3,7 @@ function getComputerChoice() {
 
 	// generate randomNum between 0 and 2
 	let randomNum = Math.floor(Math.random() * 3);
-	console.log(choice[randomNum]);
+	return choice[randomNum];
 }
 
 getComputerChoice();
