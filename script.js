@@ -77,4 +77,4 @@ function playRound(player, computer) {
 
 // game()
 
-console.log(game());
+game();
