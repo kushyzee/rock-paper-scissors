@@ -28,10 +28,12 @@ function game() {
 	for (let i = 0; i < 5; i++) {
 		let round = i + 1;
 		console.log(`Round ${round}`);
+
 		let playerSelection = getPlayerChoice();
 		let computerSelection = getComputerChoice();
 		let result = playRound(playerSelection, computerSelection);
 
+		// determine who wins each round
 		if (result === "playerWins") {
 			playerScore++;
 			console.log(`player: ${playerScore}
@@ -60,7 +62,10 @@ function playRound(player, computer) {
 		player = getPlayerChoice();
 		computer = getComputerChoice();
 		return playRound(player, computer);
-	} else if (player === "Rock" && computer === "Scissors") {
+	}
+
+	// if player wins
+	else if (player === "Rock" && computer === "Scissors") {
 		console.log("You Win! Rock beats Scissors");
 		return "playerWins";
 	} else if (player === "Paper" && computer === "Rock") {
@@ -69,12 +74,13 @@ function playRound(player, computer) {
 	} else if (player === "Scissors" && computer === "Paper") {
 		console.log("You Win! Scissors beats Paper");
 		return "playerWins";
-	} else {
+	}
+
+	// computer wins
+	else {
 		console.log(`You lose! ${computer} beats ${player}`);
 		return "computerWins";
 	}
 }
-
-// game()
 
 game();
