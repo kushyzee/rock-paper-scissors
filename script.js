@@ -15,34 +15,46 @@ function getComputerChoice() {
 }
 
 function game() {
-  let playerScore = 0;
-  let computerScore = 0;
-  for (let i = 0; i < 5; i++) {
-    let result = playRound(playerSelection, computerSelection)
+	let playerScore = 0;
+	let computerScore = 0;
 
-    let tested = 0
-    while (tested === 'tie') {
-      result = playRound(playerSelection, computerSelection)
-    }
-  }
+	// play 5 rounds of the game
+	for (let i = 0; i < 5; i++) {
+		let result = playRound(playerSelection, computerSelection);
+
+		if (result === "playerWins") {
+			playerScore++;
+			console.log(`player: ${playerScore}
+      computer: ${computerScore}
+      `);
+		} else {
+			computerScore++;
+			console.log(`player: ${playerScore}
+      computer: ${computerScore}
+      `);
+		}
+	}
+
+	// determine winner
 }
 
 function playRound(player, computer) {
 	if (player === computer) {
 		console.log(`you both chose ${player}`);
-		return "tie";
+		computer = getComputerChoice();
+		playRound(player, computer);
 	} else if (player === "Rock" && computer === "Scissors") {
 		console.log("You Win! Rock beats Scissors");
-		return 'playerWins';
+		return "playerWins";
 	} else if (player === "Paper" && computer === "Rock") {
 		console.log("You Win! Paper beats Rock");
-    return 'playerWins'
+		return "playerWins";
 	} else if (player === "Scissors" && computer === "Paper") {
 		console.log("You Win! Scissors beats Paper");
-		return 'playerWins';
+		return "playerWins";
 	} else {
 		console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
-		return 'computerWins';
+		return "computerWins";
 	}
 }
 
