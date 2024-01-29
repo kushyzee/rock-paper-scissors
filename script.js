@@ -46,6 +46,11 @@ function game() {
 	}
 
 	// determine winner
+	if (playerScore > computerScore) {
+		console.log("`Player Wins with ${computerScore} rounds won out of 5`");
+	} else {
+		console.log(`Computer Wins with ${computerScore} rounds won out of 5`);
+	}
 }
 
 function playRound(player, computer) {
