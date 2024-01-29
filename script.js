@@ -14,6 +14,12 @@ function getComputerChoice() {
 	return choice[randomNum];
 }
 
+function getPlayerChoice() {
+	let playerInput = prompt("Rock, Paper or Scissors?");
+	let playerSelection = getCapitalize(playerInput);
+	return playerSelection;
+}
+
 function game() {
 	let playerScore = 0;
 	let computerScore = 0;
@@ -22,8 +28,7 @@ function game() {
 	for (let i = 0; i < 5; i++) {
 		let round = i + 1;
 		console.log(`Round ${round}`);
-		let playerInput = prompt("Rock, Paper or Scissors?");
-		let playerSelection = getCapitalize(playerInput);
+		let playerSelection = getPlayerChoice();
 		let computerSelection = getComputerChoice();
 		let result = playRound(playerSelection, computerSelection);
 
@@ -44,10 +49,10 @@ function game() {
 }
 
 function playRound(player, computer) {
+	// if tie, replay the round
 	if (player === computer) {
 		console.log(`you both chose ${player}. Replay round`);
-		let playerInput = prompt("Rock, Paper or Scissors?");
-		player = getCapitalize(playerInput);
+		player = getPlayerChoice();
 		computer = getComputerChoice();
 		return playRound(player, computer);
 	} else if (player === "Rock" && computer === "Scissors") {
