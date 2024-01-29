@@ -20,6 +20,9 @@ function game() {
 
 	// play 5 rounds of the game
 	for (let i = 0; i < 5; i++) {
+		let playerInput = prompt("Rock, Paper or Scissors?");
+		let playerSelection = getCapitalize(playerInput);
+		let computerSelection = getComputerChoice();
 		let result = playRound(playerSelection, computerSelection);
 
 		if (result === "playerWins") {
@@ -42,7 +45,7 @@ function playRound(player, computer) {
 	if (player === computer) {
 		console.log(`you both chose ${player}`);
 		computer = getComputerChoice();
-		playRound(player, computer);
+		return playRound(player, computer);
 	} else if (player === "Rock" && computer === "Scissors") {
 		console.log("You Win! Rock beats Scissors");
 		return "playerWins";
@@ -53,14 +56,10 @@ function playRound(player, computer) {
 		console.log("You Win! Scissors beats Paper");
 		return "playerWins";
 	} else {
-		console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
+		console.log(`You lose! ${computer} beats ${player}`);
 		return "computerWins";
 	}
 }
-
-let playerInput = prompt("Rock, Paper or Scissors?");
-let playerSelection = getCapitalize(playerInput);
-let computerSelection = getComputerChoice();
 
 // game()
 
