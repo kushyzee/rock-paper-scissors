@@ -1,11 +1,3 @@
-function getCapitalize(word) {
-	// convert the first letter to uppercase
-	let firstLetter = word.slice(0, 1).toUpperCase();
-
-	// merge the first letter with the other letters converted to lowercase
-	return firstLetter + word.slice(1).toLowerCase();
-}
-
 function getComputerChoice() {
 	const choice = ["Rock", "Paper", "Scissors"];
 
@@ -14,38 +6,32 @@ function getComputerChoice() {
 	return choice[randomNum];
 }
 
-function getPlayerChoice() {
-	let playerInput = prompt("Rock, Paper or Scissors?");
-	let playerSelection = getCapitalize(playerInput);
-	return playerSelection;
-}
-
 function game() {
 	let playerScore = 0;
 	let computerScore = 0;
 
 	// play 5 rounds of the game
-	for (let i = 0; i < 5; i++) {
-		let round = i + 1;
-		console.log(`Round ${round}`);
+	// for (let i = 0; i < 5; i++) {
+	// 	let round = i + 1;
+	// 	console.log(`Round ${round}`);
 
-		let playerSelection = getPlayerChoice();
-		let computerSelection = getComputerChoice();
-		let result = playRound(playerSelection, computerSelection);
+	// 	let playerSelection = getPlayerChoice();
+	// 	let computerSelection = getComputerChoice();
+	// 	let result = playRound(playerSelection, computerSelection);
 
-		// determine who wins each round
-		if (result === "playerWins") {
-			playerScore++;
-			console.log(`player: ${playerScore}
-      computer: ${computerScore}
-      `);
-		} else {
-			computerScore++;
-			console.log(`player: ${playerScore}
-      computer: ${computerScore}
-      `);
-		}
-	}
+	// 	// determine who wins each round
+	// 	if (result === "playerWins") {
+	// 		playerScore++;
+	// 		console.log(`player: ${playerScore}
+	//     computer: ${computerScore}
+	//     `);
+	// 	} else {
+	// 		computerScore++;
+	// 		console.log(`player: ${playerScore}
+	//     computer: ${computerScore}
+	//     `);
+	// 	}
+	// }
 
 	// determine winner
 	if (playerScore > computerScore) {
