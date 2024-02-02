@@ -1,3 +1,5 @@
+btnGroup = document.querySelectorAll("button");
+
 function getComputerChoice() {
 	const choice = ["Rock", "Paper", "Scissors"];
 
@@ -6,18 +8,14 @@ function getComputerChoice() {
 	return choice[randomNum];
 }
 
-function game() {
+function game(e) {
 	let playerScore = 0;
 	let computerScore = 0;
 
-	// play 5 rounds of the game
-	// for (let i = 0; i < 5; i++) {
-	// 	let round = i + 1;
-	// 	console.log(`Round ${round}`);
-
-	// 	let playerSelection = getPlayerChoice();
-	// 	let computerSelection = getComputerChoice();
-	// 	let result = playRound(playerSelection, computerSelection);
+	let playerSelection = e.target.textContent;
+	console.log(playerSelection);
+	let computerSelection = getComputerChoice();
+	let result = playRound(playerSelection, computerSelection);
 
 	// 	// determine who wins each round
 	// 	if (result === "playerWins") {
@@ -31,7 +29,6 @@ function game() {
 	//     computer: ${computerScore}
 	//     `);
 	// 	}
-	// }
 
 	// determine winner
 	if (playerScore > computerScore) {
@@ -69,4 +66,6 @@ function playRound(player, computer) {
 	}
 }
 
-game();
+btnGroup.forEach((btn) => {
+	btn.addEventListener("click", game);
+});
