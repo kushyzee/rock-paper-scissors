@@ -47,6 +47,7 @@ function getGameWinner() {
 }
 
 function restartGame() {
+	resultOutput.classList.add("display");
 	playerScore = 0;
 	computerScore = 0;
 	resultOutput.childNodes.forEach((child) => (child.textContent = ""));
@@ -61,6 +62,7 @@ function game(e) {
 
 	showRoundWinner(result);
 	let gameWon = getGameWinner();
+	resultOutput.classList.remove("display");
 
 	if (gameWon) {
 		btnGroup.forEach((btn) => (btn.style.display = "none"));
