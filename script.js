@@ -31,12 +31,19 @@ function showRoundWinner(result) {
 	}
 }
 
-function showGameWinner() {
+function getGameWinner() {
 	const ROUND = 5;
+	let winner = false;
 	if (playerScore === ROUND) {
 		displayGameWinner.textContent = "Game over! You win";
+		return (winner = true);
 	} else if (computerScore === ROUND) {
 		displayGameWinner.textContent = "Game over! Computer Win";
+		return (winner = true);
+	}
+
+	if (winner) {
+		btnGroup.forEach((btn) => (btn.style.display = "none"));
 	}
 }
 
@@ -46,11 +53,10 @@ function game(e) {
 	let result = playRound(playerSelection, computerSelection);
 
 	showRoundWinner(result);
-	showGameWinner();
+	const gameWon = getGameWinner();
 }
 
 function playRound(player, computer) {
-	// if tie, replay the round
 	if (player === computer) {
 		displayRoundOutcome.textContent = `you both chose ${player}. Replay round`;
 		btnGroup.forEach((btn) => {
@@ -68,10 +74,7 @@ function playRound(player, computer) {
 	} else if (player === "Scissors" && computer === "Paper") {
 		displayRoundOutcome.textContent = "Scissors beats Paper";
 		return "playerWins";
-	}
-
-	// computer wins
-	else {
+	} else {
 		displayRoundOutcome.textContent = `${computer} beats ${player}`;
 		return "computerWins";
 	}
