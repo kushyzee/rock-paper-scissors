@@ -22,7 +22,6 @@ h1 {
 
 button {
   font-weight: 600;
-  margin-block: 2rem;
   padding: 1rem 2rem;
   background-color: #c6D8ff;
   border-style: solid;
@@ -41,6 +40,8 @@ button:hover {
   display: flex;
   justify-content: center;
   gap: 2rem;
+  margin: 2rem 2rem 3rem;
+  flex-wrap: wrap;
 }
 
 .output {
@@ -50,7 +51,8 @@ button:hover {
   background-color: #4c1036;
   color: whitesmoke;
   border-radius: 10px;
-  padding-block: 2rem;
+  margin-inline: 2rem;
+  padding: 2rem 1rem;
 }
 
 .display {
