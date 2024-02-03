@@ -1,5 +1,8 @@
 const btnGroup = document.querySelectorAll("button");
-const resultOutput = document.querySelectorAll("#output");
+const resultOutput = document.querySelector("#output");
+
+let displayResult = document.createElement("p");
+resultOutput.appendChild(displayResult);
 
 function getComputerChoice() {
 	const choice = ["Rock", "Paper", "Scissors"];
@@ -12,8 +15,8 @@ function getComputerChoice() {
 function game(e) {
 	let playerScore = 0;
 	let computerScore = 0;
+
 	let playerSelection = e.target.textContent;
-	console.log(playerSelection);
 	let computerSelection = getComputerChoice();
 	let result = playRound(playerSelection, computerSelection);
 
@@ -37,7 +40,7 @@ function game(e) {
 function playRound(player, computer) {
 	// if tie, replay the round
 	if (player === computer) {
-		console.log(`you both chose ${player}. Replay round`);
+		displayResult.textContent = `you both chose ${player}. Replay round`;
 		btnGroup.forEach((btn) => {
 			btn.addEventListener("click", game);
 		});
@@ -45,19 +48,19 @@ function playRound(player, computer) {
 
 	// if player wins
 	else if (player === "Rock" && computer === "Scissors") {
-		console.log("You Win! Rock beats Scissors");
+		displayResult.textContent = "You Win! Rock beats Scissors";
 		return "playerWins";
 	} else if (player === "Paper" && computer === "Rock") {
-		console.log("You Win! Paper beats Rock");
+		displayResult.textContent = "You Win! Paper beats Rock";
 		return "playerWins";
 	} else if (player === "Scissors" && computer === "Paper") {
-		console.log("You Win! Scissors beats Paper");
+		displayResult.textContent = "You Win! Scissors beats Paper";
 		return "playerWins";
 	}
 
 	// computer wins
 	else {
-		console.log(`You lose! ${computer} beats ${player}`);
+		displayResult.textContent = `You lose! ${computer} beats ${player}`;
 		return "computerWins";
 	}
 }
