@@ -31,21 +31,22 @@ function showRoundWinner(result) {
 	}
 }
 
-function game(e) {
-	let playerSelection = e.target.textContent;
-	let computerSelection = getComputerChoice();
-	let result = playRound(playerSelection, computerSelection);
-
-	// determine who wins each round
-	showRoundWinner(result);
-
-	// determine winner
+function showGameWinner() {
 	const ROUND = 5;
 	if (playerScore === ROUND) {
 		displayGameWinner.textContent = "Game over! You win";
 	} else if (computerScore === ROUND) {
 		displayGameWinner.textContent = "Game over! Computer Win";
 	}
+}
+
+function game(e) {
+	let playerSelection = e.target.textContent;
+	let computerSelection = getComputerChoice();
+	let result = playRound(playerSelection, computerSelection);
+
+	showRoundWinner(result);
+	showGameWinner();
 }
 
 function playRound(player, computer) {
