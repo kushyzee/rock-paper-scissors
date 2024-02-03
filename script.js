@@ -1,5 +1,6 @@
 const btnGroup = document.querySelectorAll("button");
 const resultOutput = document.querySelector("#output");
+const body = document.querySelector("body");
 
 let displayRoundOutcome = document.createElement("p");
 resultOutput.appendChild(displayRoundOutcome);
@@ -36,15 +37,13 @@ function getGameWinner() {
 	let winner = false;
 	if (playerScore === ROUND) {
 		displayGameWinner.textContent = "Game over! You win";
-		return (winner = true);
+		winner = true;
 	} else if (computerScore === ROUND) {
 		displayGameWinner.textContent = "Game over! Computer Win";
-		return (winner = true);
+		winner = true;
 	}
 
-	if (winner) {
-		btnGroup.forEach((btn) => (btn.style.display = "none"));
-	}
+	return winner;
 }
 
 function game(e) {
@@ -53,7 +52,15 @@ function game(e) {
 	let result = playRound(playerSelection, computerSelection);
 
 	showRoundWinner(result);
-	const gameWon = getGameWinner();
+	let gameWon = getGameWinner();
+
+	if (gameWon) {
+		btnGroup.forEach((btn) => (btn.style.display = "none"));
+		const restartBtn = document.createElement("button");
+		restartBtn.textContent = "Restart game?";
+		body.insertBefore(restartBtn, btnGroup[0]);
+		restartBtn.addEventListener("click", restartGame);
+	}
 }
 
 function playRound(player, computer) {
