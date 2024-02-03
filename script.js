@@ -46,6 +46,14 @@ function getGameWinner() {
 	return winner;
 }
 
+function restartGame(e) {
+	playerScore = 0;
+	computerScore = 0;
+	resultOutput.childNodes.forEach((child) => (child.textContent = ""));
+	btnGroup.forEach((btn) => (btn.style.display = ""));
+	e.target.parentNode.removeChild(e.target);
+}
+
 function game(e) {
 	let playerSelection = e.target.textContent;
 	let computerSelection = getComputerChoice();
