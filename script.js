@@ -21,12 +21,7 @@ function getComputerChoice() {
 	return choice[randomNum];
 }
 
-function game(e) {
-	let playerSelection = e.target.textContent;
-	let computerSelection = getComputerChoice();
-	let result = playRound(playerSelection, computerSelection);
-
-	// determine who wins each round
+function showRoundWinner(result) {
 	if (result === "playerWins") {
 		playerScore++;
 		displayRoundWinner.textContent = `player ${playerScore}  -  ${computerScore} computer`;
@@ -34,6 +29,15 @@ function game(e) {
 		computerScore++;
 		displayRoundWinner.textContent = `player ${playerScore}  -  ${computerScore} computer`;
 	}
+}
+
+function game(e) {
+	let playerSelection = e.target.textContent;
+	let computerSelection = getComputerChoice();
+	let result = playRound(playerSelection, computerSelection);
+
+	// determine who wins each round
+	showRoundWinner(result);
 
 	// determine winner
 	const ROUND = 5;
