@@ -7,6 +7,9 @@ resultOutput.appendChild(displayRoundOutcome);
 let displayRoundWinner = document.createElement("p");
 resultOutput.appendChild(displayRoundWinner);
 
+let displayGameWinner = document.createElement("p");
+resultOutput.appendChild(displayRoundWinner);
+
 let playerScore = 0;
 let computerScore = 0;
 
@@ -33,11 +36,12 @@ function game(e) {
 	}
 
 	// determine winner
-	// if (playerScore > computerScore) {
-	// 	console.log(`Player Wins with ${playerScore} rounds won out of 5`);
-	// } else {
-	// 	console.log(`Computer Wins with ${computerScore} rounds won out of 5`);
-	// }
+	const ROUND = 5;
+	if (playerScore === ROUND) {
+		console.log(`Player Wins with ${playerScore} rounds won out of 5`);
+	} else if (computerScore === ROUND) {
+		console.log(`Computer Wins with ${computerScore} rounds won out of 5`);
+	}
 }
 
 function playRound(player, computer) {
@@ -51,19 +55,19 @@ function playRound(player, computer) {
 
 	// if player wins
 	else if (player === "Rock" && computer === "Scissors") {
-		displayRoundOutcome.textContent = "You Win! Rock beats Scissors";
+		displayRoundOutcome.textContent = "Rock beats Scissors";
 		return "playerWins";
 	} else if (player === "Paper" && computer === "Rock") {
-		displayRoundOutcome.textContent = "You Win! Paper beats Rock";
+		displayRoundOutcome.textContent = "Paper beats Rock";
 		return "playerWins";
 	} else if (player === "Scissors" && computer === "Paper") {
-		displayRoundOutcome.textContent = "You Win! Scissors beats Paper";
+		displayRoundOutcome.textContent = "Scissors beats Paper";
 		return "playerWins";
 	}
 
 	// computer wins
 	else {
-		displayRoundOutcome.textContent = `You lose! ${computer} beats ${player}`;
+		displayRoundOutcome.textContent = `${computer} beats ${player}`;
 		return "computerWins";
 	}
 }
