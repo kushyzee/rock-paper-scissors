@@ -6,14 +6,8 @@ This is a simple Rock, Paper, Scissors game implemented in JavaScript. The game 
 
 ### How to Play
 
-1. Clone the repository to your local machine:
+1. Visit the live page
 
-```bash
-git clone https://github.com/kushyzee/rock-paper-scissors.git
-```
+2. Click any button to make a selection
 
-2. Open the index.html file in your browser.
-
-3. Follow the prompt to enter your choice: Rock, Paper, or Scissors.
-
-4. Open browser console to see information about each round and the final result
+3. First to get 5 points wins the game
