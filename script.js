@@ -8,7 +8,7 @@ let displayRoundWinner = document.createElement("p");
 resultOutput.appendChild(displayRoundWinner);
 
 let displayGameWinner = document.createElement("p");
-resultOutput.appendChild(displayRoundWinner);
+resultOutput.appendChild(displayGameWinner);
 
 let playerScore = 0;
 let computerScore = 0;
@@ -38,9 +38,9 @@ function game(e) {
 	// determine winner
 	const ROUND = 5;
 	if (playerScore === ROUND) {
-		console.log(`Player Wins with ${playerScore} rounds won out of 5`);
+		displayGameWinner.textContent = "Game over! You win";
 	} else if (computerScore === ROUND) {
-		console.log(`Computer Wins with ${computerScore} rounds won out of 5`);
+		displayGameWinner.textContent = "Game over! Computer Win";
 	}
 }
 
