@@ -6,7 +6,7 @@ This is a simple Rock, Paper, Scissors game implemented in JavaScript. The game 
 
 ### How to Play
 
-1. Visit the live page
+1. Visit the [live page](https://kushyzee.github.io/rock-paper-scissors/)
 
 2. Click any button to make a selection
 
