@@ -26,10 +26,10 @@ function game(e) {
 	// determine who wins each round
 	if (result === "playerWins") {
 		playerScore++;
-		displayRoundWinner.textContent = `player: ${playerScore} computer: ${computerScore}`;
-	} else {
+		displayRoundWinner.textContent = `player ${playerScore}  -  ${computerScore} computer`;
+	} else if (result === "computerWins") {
 		computerScore++;
-		displayRoundWinner.textContent = `player: ${playerScore} computer: ${computerScore}`;
+		displayRoundWinner.textContent = `player ${playerScore}  -  ${computerScore} computer`;
 	}
 
 	// determine winner
