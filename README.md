@@ -11,3 +11,11 @@ This is a simple Rock, Paper, Scissors game implemented in JavaScript. The game 
 2. Click any button to make a selection
 
 3. First to get 5 points wins the game
+
+### Icon source
+
+1. Fist by Cristiano Zoucas from [Noun Project](https://thenounproject.com/browse/icons/term/fist/) (CC BY 3.0)
+
+2. Hand by Cristiano Zoucas from [Noun Project](https://thenounproject.com/browse/icons/term/hand/) (CC BY 3.0)
+
+3. Scissors by Cristiano Zoucas from [Noun Project](https://thenounproject.com/browse/icons/term/scissors/) (CC BY 3.0)
