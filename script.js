@@ -1,4 +1,4 @@
-const btnGroup = document.querySelectorAll("button");
+const btnGroup = document.querySelectorAll("img");
 const resultOutput = document.querySelector("#output");
 const body = document.body;
 
@@ -56,7 +56,7 @@ function restartGame() {
 }
 
 function game(e) {
-	let playerSelection = e.target.textContent;
+	let playerSelection = e.target.alt;
 	let computerSelection = getComputerChoice();
 	let result = playRound(playerSelection, computerSelection);
 
