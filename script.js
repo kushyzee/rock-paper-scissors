@@ -1,6 +1,6 @@
 const btnGroup = document.querySelectorAll("button");
 const resultOutput = document.querySelector("#output");
-const body = document.querySelector("body");
+const body = document.body;
 
 let displayRoundOutcome = document.createElement("p");
 resultOutput.appendChild(displayRoundOutcome);
@@ -68,6 +68,7 @@ function game(e) {
 		btnGroup.forEach((btn) => (btn.style.display = "none"));
 		const restartBtn = document.createElement("button");
 		restartBtn.textContent = "Restart game?";
+		restartBtn.style.marginBottom = "30px"
 		body.insertBefore(restartBtn, resultOutput);
 		restartBtn.addEventListener("click", restartGame);
 	}
