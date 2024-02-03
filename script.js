@@ -1,6 +1,5 @@
 const btnGroup = document.querySelectorAll("button");
-let playerScore = 0;
-let computerScore = 0;
+const resultOutput = document.querySelectorAll("#output");
 
 function getComputerChoice() {
 	const choice = ["Rock", "Paper", "Scissors"];
@@ -11,6 +10,8 @@ function getComputerChoice() {
 }
 
 function game(e) {
+	let playerScore = 0;
+	let computerScore = 0;
 	let playerSelection = e.target.textContent;
 	console.log(playerSelection);
 	let computerSelection = getComputerChoice();
