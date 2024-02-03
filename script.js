@@ -66,7 +66,7 @@ function game(e) {
 		btnGroup.forEach((btn) => (btn.style.display = "none"));
 		const restartBtn = document.createElement("button");
 		restartBtn.textContent = "Restart game?";
-		body.insertBefore(restartBtn, btnGroup[0]);
+		body.insertBefore(restartBtn, resultOutput);
 		restartBtn.addEventListener("click", restartGame);
 	}
 }
